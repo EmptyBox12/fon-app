@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { Stack } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+import FonPage from "./components/FonPage";
+import FundList from "./components/FundList";
+import Home from "./components/Home";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path = "/" element = {<Layout />} >
+            <Route index element = {<Home />}  />
+            <Route path = "/:code" element = {<FonPage />} />
+            <Route path = "/fund-list" element = { <FundList /> } />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
