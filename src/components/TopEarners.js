@@ -59,7 +59,7 @@ export default function TopEarners({setSelectedFund}) {
           code: 'TCA',
           price: tabIndex === 0 ? 212 : tabIndex === 1 ? 694 : 432,
           name: "ZİRAAT PORTFÖY ALTIN KATILIM FONU",
-        },]
+        }].sort((a, b)=> {return b.price - a.price})
       )
     }
   , [tabIndex])

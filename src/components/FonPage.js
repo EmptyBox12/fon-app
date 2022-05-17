@@ -12,7 +12,7 @@ export default function FonPage() {
   const [data, setData] = useState({name:"Ak Portföy Altın Yatırım", code})
 
   useEffect(()=> {
-    if(code === "AFA"){
+    if(code === "AFO"){
       setData({name:"AK PORTFÖY ALTIN FONU", code})
     } else if(code === "AES"){
       setData({name:"AK PORTFÖY PETROL YABANCI BYF FON SEPETİ FONU", code})

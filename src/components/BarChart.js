@@ -4,6 +4,7 @@ import { BarChart as Chart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Leg
 
 export default function BarChart({setSelectedFund, data}) {
   const navigate = useNavigate();
+  const COLORS = ['#3e3e3e','grey', 'silver', '#d4d4d4'];
 
   function handleClick(data, index) {
     console.log(data);
@@ -38,7 +39,11 @@ export default function BarChart({setSelectedFund, data}) {
       <XAxis dataKey="code" />
       <YAxis />
       <Tooltip content={CustomTooltip} />
-      <Bar dataKey="price" fill="#8884d8" onClick={handleClick} className= "bar"/>
+      <Bar dataKey="price" fill="#8884d8" onClick={handleClick} className= "bar">
+        {data.map((entry, index)=> {
+            return <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          })}
+      </Bar>
     </Chart>
     </ResponsiveContainer>
   )

@@ -34,14 +34,14 @@ export default function CompareFunds({selectedFund}) {
       price: 123,
       name: selectedFund.name
     }
-  ]);
+  ].sort((a, b) => a.price - b.price));
   const [searchInput, setSearchInput] = useState("");
   const [searchValue, setSearchValue] = useState(null);
     const options = [
     {
       price: tabIndex === 0 ? 250 : tabIndex === 1 ? 170 : 200,
       name:"AK PORTFÖY ALTIN FONU",
-      code:"AFA"
+      code:"AFO"
     }, 
     {
       price: tabIndex === 0 ? 250 : tabIndex === 1 ? 170 : 200,
@@ -106,7 +106,7 @@ export default function CompareFunds({selectedFund}) {
       newItem.price = Math.floor(Math.random()*100);
       return newItem;
     })
-    setChartData(newArray);
+    setChartData(newArray.sort((a, b) => a.price - b.price ));
   }, [tabIndex])
 
   function submitSearch(e) {

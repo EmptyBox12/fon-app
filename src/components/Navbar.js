@@ -23,7 +23,7 @@ export default function Navbar() {
   const options = [
     {
       label:"AK PORTFÖY ALTIN FONU",
-      value:"AFA"
+      value:"AFO"
     }, 
     {
       label:"AK PORTFÖY PETROL YABANCI BYF FON SEPETİ FONU",
